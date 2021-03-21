@@ -9,7 +9,7 @@ import java.util.Set;
 public class Keyword {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
@@ -23,9 +23,8 @@ public class Keyword {
     public Keyword() {
     }
 
-    public Keyword(@NotNull @NotBlank String keyword, @NotNull Set<Campaign> campaigns) {
+    public Keyword(@NotNull @NotBlank String keyword) {
         this.keyword = keyword;
-        this.campaigns = campaigns;
     }
 
     public Long getId() {
@@ -44,11 +43,4 @@ public class Keyword {
         this.keyword = keyword;
     }
 
-    public Set<Campaign> getCampaigns() {
-        return campaigns;
-    }
-
-    public void setCampaigns(Set<Campaign> campaigns) {
-        this.campaigns = campaigns;
-    }
 }

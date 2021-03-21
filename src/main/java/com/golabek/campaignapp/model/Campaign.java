@@ -13,7 +13,7 @@ import java.util.Set;
 public class Campaign {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
@@ -34,7 +34,7 @@ public class Campaign {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @ManyToOne
+    @OneToOne
     private Town town;
 
     @NotNull

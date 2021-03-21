@@ -9,24 +9,19 @@ import java.util.Set;
 public class Town {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotNull
     @NotBlank
     private String name;
 
-    @NotNull
-    @OneToMany
-    @JoinColumn(name = "town_id")
-    private Set<Campaign> campaigns;
 
     public Town() {
     }
 
-    public Town(@NotNull @NotBlank String name, @NotNull Set<Campaign> campaigns) {
+    public Town(@NotNull @NotBlank String name) {
         this.name = name;
-        this.campaigns = campaigns;
     }
 
     public Long getId() {
@@ -45,11 +40,4 @@ public class Town {
         this.name = name;
     }
 
-    public Set<Campaign> getCampaigns() {
-        return campaigns;
-    }
-
-    public void setCampaigns(Set<Campaign> campaigns) {
-        this.campaigns = campaigns;
-    }
 }
