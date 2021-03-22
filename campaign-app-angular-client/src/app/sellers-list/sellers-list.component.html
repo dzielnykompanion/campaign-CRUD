@@ -1,0 +1,17 @@
+<h2>List of sellers</h2>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">FUNDS</th>
+          </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let seller of listSellers">
+                <td>{{seller.id}}</td>
+                <td>{{seller.name}}</td>
+                <td>{{seller.funds}}</td>
+              </tr>
+        </tbody>
+</table>
