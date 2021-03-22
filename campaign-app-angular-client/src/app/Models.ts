@@ -15,6 +15,7 @@ export class Campaign {
     town:         Town;
     radius:       number;
     sellerId:     number;
+    sellerName:   string;
 }
 
 export class Keyword {

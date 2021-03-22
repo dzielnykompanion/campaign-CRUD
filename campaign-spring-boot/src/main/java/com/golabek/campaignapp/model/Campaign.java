@@ -45,9 +45,11 @@ public class Campaign {
     @Min(0)
     private Integer radius;
 
-    @JsonBackReference
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="seller_id")
+    //@JsonBackReference
+    //@ManyToOne(fetch=FetchType.LAZY)
+    //@JoinColumn(name="seller_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "sellerId", nullable = false)
     private Seller seller;
 
     public Campaign() {
@@ -117,11 +119,21 @@ public class Campaign {
         this.radius = radius;
     }
 
+    @JsonIgnore
     public Seller getSeller() {
         return seller;
     }
 
+    @JsonIgnore
     public void setSeller(Seller seller) {
         this.seller = seller;
+    }
+
+    public Long getSellerId(){
+        return seller.getId();
+    }
+
+    public String getSellerName(){
+        return seller.getName();
     }
 }

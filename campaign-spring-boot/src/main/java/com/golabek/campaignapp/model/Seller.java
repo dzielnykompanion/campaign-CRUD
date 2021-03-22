@@ -17,8 +17,9 @@ public class Seller {
     private String name;
     private Integer funds;
 
-    @JsonManagedReference
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="seller", orphanRemoval = true)
+    //@JsonManagedReference
+    //@OneToMany(cascade = CascadeType.ALL, mappedBy="seller", orphanRemoval = true)
+    @OneToMany(mappedBy = "seller", fetch = FetchType.LAZY)
     private Collection<Campaign> campaigns = new ArrayList<>();
 
     public Seller() {

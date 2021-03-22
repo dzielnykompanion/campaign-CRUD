@@ -22,13 +22,13 @@ public class CampaignController {
     @Autowired
     private ErrorMapValidationService errorMapValidationService;
 
-    @PostMapping("/addCampaign")
-    public ResponseEntity<?> addOrUpdateCampaign(@Valid @RequestBody Campaign campaign, BindingResult result) {
+    @PostMapping("/addCampaign/{sellerId}")
+    public ResponseEntity<?> addOrUpdateCampaign(@Valid @RequestBody Campaign campaign,@PathVariable Long sellerId, BindingResult result) {
 
         ResponseEntity<?> errorMap = errorMapValidationService.errorMapValidationService(result);
         if ( errorMap != null ) return errorMap;
 
-        campaignService.addOrUpdateCampaign(campaign);
+        campaignService.addOrUpdateCampaign(campaign, sellerId);
         return new ResponseEntity<Campaign>(campaign, HttpStatus.CREATED);
     }
 

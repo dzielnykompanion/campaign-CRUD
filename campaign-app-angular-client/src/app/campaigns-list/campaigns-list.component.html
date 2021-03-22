@@ -1,4 +1,8 @@
 <h2>List of campaigns</h2>
+
+<button class="buttonSpec btn-primary" width=400 routerLink="addCampaign">Add campaign</button>
+<br><br>
+
     <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -18,16 +22,17 @@
               <tr *ngFor="let campaign of listCampaigns">
                 <td>{{campaign.id}}</td>
                 <td>{{campaign.name}}</td>
-                <td><div *ngFor="let keyword of campaign.keywords">
-                {{keyword.keyword}}
-                </div>
+                <td>
+                    <div *ngFor="let keyword of campaign.keywords">
+                        {{keyword.keyword}}
+                    </div>
                 </td>
                 <td>{{campaign.bidAmount}}</td>
                 <td>{{campaign.campaignFund}}</td>
                 <td>{{campaign.status}}</td>
                 <td>{{campaign.town.name}}</td>
                 <td>{{campaign.radius}}</td>
-                <td>{{campaign.sellerId}}</td>
+                <td>{{campaign.sellerName}}</td>
                 <td>
                     <button (click)="campaignDetails(campaign.id)" class="btn btn-info" style="margin-right: 10px">Update</button>
                     <button (click)="deleteCampaign(campaign.id)" class="btn btn-danger"><div>Delete</div></button>

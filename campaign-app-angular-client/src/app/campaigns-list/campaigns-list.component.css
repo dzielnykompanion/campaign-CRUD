@@ -1,0 +1,11 @@
+.buttonSpec {
+  width: 300px;
+  height: 60px;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.5%;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 35px;
+}

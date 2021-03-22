@@ -19,14 +19,15 @@ public class CampaignService {
     @Autowired
     private SellerService sellerService;
 
-    public Campaign addOrUpdateCampaign(Campaign campaign){
+    public Campaign addOrUpdateCampaign(Campaign campaign, Long sellerId){
+        // will throw exception if not found
+        Seller seller = sellerService.findById(sellerId);
         // when update, check if exists
         if ( campaign.getId() != null) {
             Campaign existingCampaign = findById(campaign.getId());
         }
 
-        // find correct seller, if not found it will throw exception
-        Seller seller = sellerService.findById(campaign.getSeller().getId());
+        campaign.setSeller(seller);
 
         // check if seller has funds
         if (seller.getFunds() < campaign.getCampaignFund()){

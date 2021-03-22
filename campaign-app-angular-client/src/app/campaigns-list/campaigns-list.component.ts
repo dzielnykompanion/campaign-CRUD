@@ -25,6 +25,7 @@ export class CampaignsListComponent implements OnInit {
     (
       data =>
       {
+        console.log(data);
         this.listCampaigns = data;
       }
     )
@@ -39,6 +40,8 @@ export class CampaignsListComponent implements OnInit {
               (error) => console.log(error)
             );
           }
+
+          
 }
 
 
