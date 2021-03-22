@@ -6,6 +6,8 @@ import com.golabek.campaignapp.repository.SellerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SellerService {
 
@@ -27,6 +29,10 @@ public class SellerService {
         } catch (Exception ex){
             throw new SellerIdException("Seller with ID " + id + " doesn't exist");
         }
+    }
+
+    public List<Seller> getAll(){
+        return sellerRepo.findAll();
     }
 
 }
