@@ -8,6 +8,7 @@ import { CampaignListComponent } from './campaign-list/campaign-list.component';
 import { SellersListComponent } from './sellers-list/sellers-list.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { CampaignsListComponent } from './campaigns-list/campaigns-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     CreateCampaignComponent,
     CampaignDetailsComponent,
     CampaignListComponent,
-    SellersListComponent
+    SellersListComponent,
+    CampaignsListComponent
   ],
   imports: [
     BrowserModule,
